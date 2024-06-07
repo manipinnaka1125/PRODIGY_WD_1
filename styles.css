@@ -1,0 +1,151 @@
+/* Basic Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation Bar Styling */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav .menu-icon {
+    display: none;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ff6347;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #ff6347; /* Tomato color */
+    transform: scale(1.1);
+}
+
+nav ul li a:active {
+    color: #ff4500; /* Darker Tomato color */
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 70px; /* Adjusted to account for the fixed nav */
+    transition: background-color 0.5s;
+}
+
+section h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+#home { background-color: #f4f4f4; }
+#about { background-color: #e2e2e2; }
+#services { background-color: #cfcfcf; }
+#contact { background-color: #bcbcbc; }
+
+/* Button Styles */
+button {
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+}
+
+button:active {
+    background-color: #e03e00;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        background-color: #333;
+        transition: left 0.3s;
+    }
+
+    nav ul.show {
+        left: 0;
+    }
+
+    nav .menu-icon {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
